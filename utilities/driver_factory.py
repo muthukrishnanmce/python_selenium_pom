@@ -14,7 +14,8 @@ class DriverFactory:
 
     def get_driver_instance(self):
         if self.driver is None:
-            browser_name = TestConfig.get_config("browser")
+            test_config = TestConfig()
+            browser_name = test_config.get_config("browser")
             if browser_name.upper() == "CHROME":
                 self.add_chrome_capabilities()
                 self.driver = webdriver.Chrome(options=self.chrome_options,
