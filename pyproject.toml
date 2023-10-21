@@ -11,6 +11,10 @@ selenium = "^4.14.0"
 pyyaml = "^6.0.1"
 webdriver-manager = "^4.0.1"
 pytest = "^7.4.2"
+pytest-rerunfailures = "^12.0"
+
+[tool.pytest.ini_options]
+addopts = "--reruns 3 --reruns-delay 2"
 
 
 [build-system]

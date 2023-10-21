@@ -1,9 +1,9 @@
 import pytest
 
-from tests.base_test import TestBaseTest
+# from tests.test_fixtures import driver
 
-
-class TestFirstLoginTest(TestBaseTest):
+@pytest.mark.usefixtures("setup")
+class TestFirstLoginTest:
 
     def test_login(self):
         self.driver.get("https://www.saucedemo.com/")
